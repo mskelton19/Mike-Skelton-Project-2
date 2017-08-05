@@ -9,6 +9,8 @@ app.use(methodOverride('_method'));
 
 const userController = require('./controllers/users.js');
 app.use(userController);
+const photoController = require('./controllers/photos.js');
+app.use(photoController);
 
 mongoose.connect('mongodb://localhost:27017/users');
 mongoose.connection.once('open', () => {

@@ -10,8 +10,28 @@ router.get('/users', (req, res) => {
   });
 });
 
+router.post('/users', (req, res) => {
+  User.create(req.body, (error, createdUser) => {
+    res.redirect('/users')
+  });
+});
+
 router.get('/users/new', (req, res) => {
   res.render('users/new.ejs');
 })
+
+router.get('/users/:id', (req, res) => {
+  User.findById(req.params.id, (error, User) => {
+    res.render('users/show.ejs', {
+      user: User
+    })
+  })
+})
+
+router.delete('/users/:id', (req, res) => {
+  User.findByIdAndRemove(req.params.id, (error, data) => {
+    res.redirect('/users');
+  });
+});
 
 module.exports = router;
