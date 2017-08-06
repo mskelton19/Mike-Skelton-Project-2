@@ -20,9 +20,23 @@
           Type: <%=photo[i].type%><br>
           Bait: <%=photo[i].bait%><br>
         </li>
+
+        <form action='/photos/<%=photo[i].id%>?_method=DELETE' method='POST'>
+          <input type='submit' value='Delete Picture'/>
+        </form>
       <% } %>
     </ul>
 
 
   </body>
+
+  <style>
+
+  img {
+    width: 350px;
+    height: 300px;
+  }
+
+  </style>
+
 </html>

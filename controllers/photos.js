@@ -29,4 +29,10 @@ router.get('photos/:id', (req, res) => {
   });
 })
 
+router.delete('/photos/:id', (req, res) => {
+  Photo.findByIdAndRemove(req.params.id, (error, data) => {
+    res.redirect('/photos');
+  });
+});
+
 module.exports = router;
