@@ -10,6 +10,12 @@ router.get('/users', (req, res) => {
   });
 });
 
+router.put('/users/:id', (req, res) => {
+  User.findByIdAndUpdate(req.params.id, req.body, (error, updateModel) => {
+    res.redirect('/users')
+  })
+})
+
 router.post('/users', (req, res) => {
   User.create(req.body, (error, createdUser) => {
     res.redirect('/users')
