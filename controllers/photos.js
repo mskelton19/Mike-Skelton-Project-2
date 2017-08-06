@@ -6,8 +6,18 @@ router.get('/photos', (req, res) => {
   res.render('photos/index.ejs');
 })
 
-router.get('/photos/new', (req, res) => {
-  res.render('photos/new.ejs');
+
+router.get('photos/:id', (req, res) => {
+  res.render('photos/show.ejs')
+})
+
+
+router.get('/photos/:id', (req, res) => {
+  User.findById(req.params.id, (error, User) => {
+    res.render('photos/show.ejs', {
+      photo: Photo
+    })
+  })
 })
 
 module.exports = router;

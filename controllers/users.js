@@ -28,10 +28,19 @@ router.get('/users/:id', (req, res) => {
   })
 })
 
+router.get('/users/:id/edit', (req, res) => {
+  User.findById(req.params.id, (error, editUser) => {
+    res.render('users/edit.ejs', {
+      user: editUser
+    })
+  })
+})
+
 router.delete('/users/:id', (req, res) => {
   User.findByIdAndRemove(req.params.id, (error, data) => {
     res.redirect('/users');
   });
 });
+
 
 module.exports = router;
