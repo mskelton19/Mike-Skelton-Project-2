@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Photo = require('../models/photos.js');
+const User = require('../models/users.js')
 
 router.get('/photos', (req, res) => {
   Photo.find ({}, (error, allPhotos) => {
@@ -27,7 +28,7 @@ router.get('/photos/new', (req, res) => {
 })
 
 
-router.get('photos/:id', (req, res) => {
+router.get('/photos/:id', (req, res) => {
   Photo.findById(req.params.id, (error, foundPhoto) => {
     res.render('photos/show.ejs', {
       photo: foundPhoto

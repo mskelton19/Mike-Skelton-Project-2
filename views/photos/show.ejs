@@ -6,5 +6,28 @@
   </head>
   <body>
     <h1>Photo Page</h1>
+
+    <a href='/photos/<%=photo.id%>'><img src='<%=photo.img%>'></a><br>
+    Posted By: <%=photo.username%><br>
+    Location: <%=photo.location%><br>
+    Species: <%=photo.type%><br>
+    Bait: <%=photo.bait%><br>
+
   </body>
+
+  <style>
+
+  body {
+    text-align: center;
+  }
+
+  img {
+    width: 250px;
+    display: block;
+    margin: auto;
+  }
+
+
+  </style>
+
 </html>

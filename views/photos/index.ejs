@@ -17,9 +17,10 @@
       <% for(let i = 0; i < photo.length; i++) {%>
         <li>
           <a href='/photos/<%=photo[i].id%>'><img src='<%=photo[i].img%>'></a><br>
+          Posted By: <%=photo[i].username%><br>
           Date: <%=photo[i].date%><br>
           Location: <%=photo[i].location%><br>
-          Type: <%=photo[i].type%><br>
+          Species: <%=photo[i].type%><br>
           Bait: <%=photo[i].bait%><br>
 
           <form action='/photos/<%=photo[i].id%>?_method=DELETE' method='POST'>
