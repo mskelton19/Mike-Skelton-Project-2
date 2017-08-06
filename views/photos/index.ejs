@@ -7,9 +7,11 @@
   <body>
     <h1>Photos Landing Page</h1>
 
-    <a href='/'>Home</a>
-    <a href='/users'>Users</a>
-    <a href='/photos/new'>Add Photo</a>
+    <nav>
+      <a href='/'>Home</a>
+      <a href='/users'>Users</a>
+      <a href='/photos/new'>Add Photo</a>
+    </nav>
 
     <ul>
       <% for(let i = 0; i < photo.length; i++) {%>
@@ -19,11 +21,11 @@
           Location: <%=photo[i].location%><br>
           Type: <%=photo[i].type%><br>
           Bait: <%=photo[i].bait%><br>
-        </li>
 
         <form action='/photos/<%=photo[i].id%>?_method=DELETE' method='POST'>
           <input type='submit' value='Delete Picture'/>
         </form>
+        </li>
       <% } %>
     </ul>
 
@@ -32,9 +34,24 @@
 
   <style>
 
+  h1 {
+    text-align: center;
+  }
+
+  li {
+    padding: 1em;
+    display: inline-block;
+    width: 250px;
+    text-align: center;
+  }
+
+  nav {
+    text-align: center;
+  }
+
   img {
-    width: 350px;
-    height: 300px;
+    width: 250px;
+    height: 200px;
   }
 
   </style>
