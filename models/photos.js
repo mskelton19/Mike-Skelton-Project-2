@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const photoSchema = new mongoose.Schema ({
   img: {type: String},
-  name: {type: String},
+  date: {type: Date},
   location: {type: String},
   type: {type: String},
   bait: {type: String}

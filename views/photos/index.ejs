@@ -10,5 +10,19 @@
     <a href='/'>Home</a>
     <a href='/users'>Users</a>
     <a href='/photos/new'>Add Photo</a>
+
+    <ul>
+      <% for(let i = 0; i < photo.length; i++) {%>
+        <li>
+          <a href='/photos/<%=photo[i].id%>'><img src='<%=photo[i].img%>'></a><br>
+          Date: <%=photo[i].date%><br>
+          Location: <%=photo[i].location%><br>
+          Type: <%=photo[i].type%><br>
+          Bait: <%=photo[i].bait%><br>
+        </li>
+      <% } %>
+    </ul>
+
+
   </body>
 </html>

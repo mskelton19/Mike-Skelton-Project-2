@@ -11,7 +11,7 @@ router.get('/photos', (req, res) => {
 })
 
 router.post('/photos', (req, res) => {
-  Photo.create(req.body, (error, createPhoto) => {
+  Photo.create(req.body, (error, createdPhoto) => {
     res.redirect('/photos')
   });
 });
@@ -27,15 +27,6 @@ router.get('photos/:id', (req, res) => {
       photo: foundPhoto
     });
   });
-})
-
-
-router.get('/photos/:id', (req, res) => {
-  Photo.findById(req.params.id, (error, Photo) => {
-    res.render('photos/show.ejs', {
-      photo: Photo
-    })
-  })
 })
 
 module.exports = router;
