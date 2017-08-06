@@ -6,5 +6,8 @@ router.get('/photos', (req, res) => {
   res.render('photos/index.ejs');
 })
 
+router.get('/photos/new', (req, res) => {
+  res.render('photos/new.ejs');
+})
 
-module.exports = Photo;
+module.exports = router;
