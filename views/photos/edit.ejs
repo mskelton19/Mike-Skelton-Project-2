@@ -6,5 +6,14 @@
   </head>
   <body>
     <h1>Edit Photo</h1>
+
+    <form action='/photos/<%=photo.id%>?_method=PUT' method='POST'>
+      Image: <input type='text' name='img' value='<%=photo.img%>'/><br>
+      Date:  <input type='text' name='date' value='<%=photo.date%>'/><br>
+      Location: <input type='text' name='location' value='<%=photo.location%>'/><br>
+      Type: <input type='text' name='type' value='<%-photo.type%>'/><br>
+      Bait: <input type='text' name='bait' value='<%=photo.bait%>'/><br>
+      <input type='submit' value='Post Photo'/><br>
+    </form>
   </body>
 </html>
