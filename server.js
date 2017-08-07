@@ -12,7 +12,9 @@ app.use(userController);
 const photoController = require('./controllers/photos.js');
 app.use(photoController);
 
-mongoose.connect('mongodb://localhost:27017/users');
+const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/users'
+mongoose.connect(mongoUri);
+
 mongoose.connection.once('open', () => {
   console.log('connected to mongo');
 })
@@ -22,6 +24,7 @@ app.get('/', (req, res) => {
   res.render('index.ejs');
 })
 
+const port = process.env.PORT || 3000;
 
 app.listen(3000, (req, res) => {
   console.log('listening');
