@@ -44,7 +44,8 @@ app.get('/', (req, res) => {
 })
 
 // Auth routes
-app.get('/register', (req, res) => {
+// ****Use this moi
+app.get('/register', isLoggedIn, (req, res) => {
   res.render('register.ejs');
 })
 
@@ -74,33 +75,17 @@ app.post('/login', passport.authenticate('local', {
 }), function(req, res) {
 })
 
+app.get('/logout', function (req, res) {
+  req.logout();
+  res.redirect('/');
+})
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function isLoggedIn(req, res, next){
+  if(req.isAuthenticated()){
+    return next();
+  }
+  res.redirect('/login');
+}
 
 const port = process.env.PORT || 3000
 
