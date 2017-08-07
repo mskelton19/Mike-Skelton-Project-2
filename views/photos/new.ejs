@@ -8,7 +8,11 @@
     <h1>New Photo</h1>
 
     <form action='/photos' method='POST'>
-      Username: <input type='text' name='username'/><br>
+      Username:<select name=''>
+        <% for(let i = 0; i < users.length; i++){ %>
+          <option><%=users[i].username%></option>
+        <% } %>
+      </select> <br>
       Image: <input type='text' name='img'/><br>
       Date:  <input type='text' name='date'/><br>
       Location: <input type='text' name='location'/><br>

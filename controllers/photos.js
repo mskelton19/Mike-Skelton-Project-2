@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Photo = require('../models/photos.js');
-const User = require('../models/users.js')
+const User = require('../models/users.js');
 
 router.get('/photos', (req, res) => {
   Photo.find ({}, (error, allPhotos) => {
@@ -24,7 +24,11 @@ router.post('/photos', (req, res) => {
 });
 
 router.get('/photos/new', (req, res) => {
-  res.render('photos/new.ejs');
+  User.find({}, (error, allUsers) => {
+    res.render('photos/new.ejs', {
+      users: allUsers
+    });
+  });
 })
 
 
