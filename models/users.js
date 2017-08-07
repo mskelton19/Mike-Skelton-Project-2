@@ -1,12 +1,15 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-const Photo = require('../models/photos.js');
+const mongoose              = require('mongoose');
+const Schema                = mongoose.Schema;
+const Photo                 = require('../models/photos.js');
+const passportLocalMongoose = require('passport-local-mongoose');
 
 const userSchema = new mongoose.Schema ({
   username: {type: String},
-  location: {type: String},
+  password: {type: String},
   photos: [Photo.schema]
 });
+
+userSchema.plugin(passportLocalMongoose);
 
 const User = mongoose.model('User', userSchema);
 
