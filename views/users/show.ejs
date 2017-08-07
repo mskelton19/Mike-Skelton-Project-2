@@ -5,9 +5,14 @@
     <title></title>
   </head>
   <body>
+    <nav>
+      <a href='/photos'>Photos</a>
+      <a href='/users'>Users</a>
+      <a href='/'>Home</a>
+    </nav>
     <h1>Username</h1>
 
-    <%=user.username%>
+    <h3><%=user.username%></h3>
 
     <section>
       <h2>Posts by <%=user.username%></h2>
@@ -18,6 +23,29 @@
 
         </ul>
     </section>
+
+  <style>
+
+  h1 {
+    text-align: center;
+    }
+    h3 {
+      text-align: center;
+    }
+
+    h2 {
+      text-align: center;
+    }
+    img {
+      display: inline-block;
+      margin: auto;
+      width: 250px;
+      padding: 1em;
+      text-align: center;
+    }
+  </style>
+
+
 
   </body>
 </html>
