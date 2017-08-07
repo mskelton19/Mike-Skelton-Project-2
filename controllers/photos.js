@@ -19,7 +19,15 @@ router.put('/photos/:id', (req, res) => {
 
 router.post('/photos', (req, res) => {
   Photo.create(req.body, (error, createdPhoto) => {
-    res.redirect('/photos')
+  User.findById(req.body.userId, (err, foundUser) => {
+    foundUser.photos.push(createdPhoto);
+    foundUser.save((err, data) => {
+      res.redirect('/photos');
+    });
+  })
+  // Photo.create(req.body, (error, createdPhoto) => {
+  //   res.send(createdPhoto)
+    // res.redirect('/photos')
   });
 });
 
@@ -32,13 +40,18 @@ router.get('/photos/new', (req, res) => {
 })
 
 
+
+
 router.get('/photos/:id', (req, res) => {
-  Photo.findById(req.params.id, (error, foundPhoto) => {
-    res.render('photos/show.ejs', {
-      photo: foundPhoto
-    });
+  // Photo.findById(req.params.id, (error, foundPhoto) => {
+    User.findOne({'photos._id':req.params.id}, (err, foundUser) => {
+      res.send(foundUser);
+    })
+    // res.render('photos/show.ejs', {
+    //   photo: foundPhoto
+    // });
   });
-})
+// })
 
 router.get('/photos/:id/edit', (req, res) => {
   Photo.findById(req.params.id, (error, editPhoto) => {

@@ -17,7 +17,7 @@
       <% for(let i = 0; i < photo.length; i++) {%>
         <li>
           <a href='/photos/<%=photo[i].id%>'><img src='<%=photo[i].img%>'></a><br>
-          Posted By: <%=photo[i].username%><br>
+          Posted By: <%=photo.username%><br>
           Date: <%=photo[i].date%><br>
           Location: <%=photo[i].location%><br>
           Species: <%=photo[i].type%><br>
