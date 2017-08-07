@@ -13,7 +13,7 @@
     </nav>
 
     <a href='/photos/<%=photo.id%>'><img src='<%=photo.img%>'></a><br>
-    Posted By: <%=photo.username%><br>
+    Posted By: <a href='/users/<%=user._id%>'><%=user.username%></a><br>
     Location: <%=photo.location%><br>
     Species: <%=photo.type%><br>
     Bait: <%=photo.bait%><br>
