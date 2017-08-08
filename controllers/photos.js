@@ -56,9 +56,6 @@ router.get('/photos/new', isLoggedIn, (req, res) => {
   });
 })
 
-
-
-
 router.get('/photos/:id', isLoggedIn, (req, res) => {
   Photo.findById(req.params.id, (error, foundPhoto) => {
     User.findOne({'photos._id':req.params.id}, (err, foundUser) => {
