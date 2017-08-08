@@ -7,7 +7,9 @@
     <title></title>
   </head>
   <body>
-    <h1>Photos Landing Page</h1>
+    <header>
+      <h1>Photos Landing Page</h1>
+    </header>
 
     <nav>
       <a href='/'>Home</a>
@@ -15,26 +17,29 @@
       <a href='/photos/new'>Add Photo</a>
     </nav>
 
-    <ul>
-      <% for(let i = 0; i < photo.length; i++) {%>
-        <li>
-          <a href='/photos/<%=photo[i].id%>'><img src='<%=photo[i].img%>'></a><br>
-          Posted By: <%=photo.username%><br>
-          Date: <%=photo[i].date%><br>
-          Location: <%=photo[i].location%><br>
-          Species: <%=photo[i].type%><br>
-          Bait: <%=photo[i].bait%><br>
+    <div class='row'>
+      <ul class='container'>
+        <% for(let i = 0; i < photo.length; i++) {%>
+          <li>
+            <a href='/photos/<%=photo[i].id%>'><img  src='<%=photo[i].img%>' class="img-thumbnail"></a><br>
+            Posted By: <%=photo.username%><br>
+            Date: <%=photo[i].date%><br>
+            Location: <%=photo[i].location%><br>
+            Species: <%=photo[i].type%><br>
+            Bait: <%=photo[i].bait%><br>
 
-          <form action='/photos/<%=photo[i].id%>?_method=DELETE' method='POST'>
-            <input type='submit' value='Delete Picture'/><br>
-          </form>
+            <form class='form-horizontal' action='/photos/<%=photo[i].id%>?_method=DELETE' method='POST'>
+              <div class='form-group'>
+              <input type='submit' value='Delete Picture'/><br>
+              </div>
+            </form>
 
-          <a href='/photos/<%=photo[i].id%>/edit'>Edit Photo</a>
+            <a href='/photos/<%=photo[i].id%>/edit'>Edit Photo</a>
 
-        </li>
-      <% } %>
-    </ul>
-
+          </li>
+        <% } %>
+      </ul>
+    </div>
 
   </body>
 
@@ -42,6 +47,9 @@
 
   h1 {
     text-align: center;
+    color: blue;
+    border: 1px solid black;
+    padding: 1em;
   }
 
   li {
@@ -49,20 +57,24 @@
     display: inline-block;
     width: 250px;
     text-align: center;
+    color: blue;
+    margin-right: 15px;
   }
 
   nav {
     text-align: center;
-  }
-
-  a li {
-    padding-right: 25px;
+    border: 1px solid black;
+    padding: 1em;
   }
 
   img {
     width: 250px;
     height: 200px;
+    padding: 1em;
+    border: 1px solid blue;
+    background-color: lightblue;
   }
+
 
   </style>
 
