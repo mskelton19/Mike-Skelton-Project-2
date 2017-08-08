@@ -76,8 +76,13 @@ router.get('/photos/:id/edit', isLoggedIn, (req, res) => {
 })
 
 router.delete('/photos/:id', isLoggedIn, (req, res) => {
-  Photo.findByIdAndRemove(req.params.id, (error, data) => {
-    res.redirect('/photos');
+  Photo.findByIdAndRemove(req.params.id, () => {
+    User.findOne({ 'photos._id': req.params.id}, (err, foundUser) => {
+      foundUser.photos.id(req.params.id).remove();
+      foundUser.save((err, savedUser) =>{
+        res.redirect('/photos');
+      });
+    });
   });
 });
 
