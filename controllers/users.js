@@ -1,6 +1,7 @@
-const express = require('express');
-const router = express.Router();
-const User = require('../models/users.js');
+const express               = require('express');
+const router                = express.Router();
+const User                  = require('../models/users.js');
+const Photo                 = require('../models/photos.js');
 const passport              = require('passport');
 const localStrategy         = require('passport-local');
 const passportLocalMongoose = require('passport-local-mongoose');
@@ -63,10 +64,23 @@ router.get('/users/:id/edit', (req, res) => {
 })
 
 router.delete('/users/:id', (req, res) => {
-  User.findByIdAndRemove(req.params.id, (error, data) => {
-    res.redirect('/users');
-  });
+  User.findByIdAndRemove(req.params.id, (error, foundUser) => {
+    const photoIds = [];
+    for(let i = 0; i < foundUser.photos.length; i++) {
+      photoIds.push(foundUser.photos[i]._id);
+    }
+    Photo.remove(
+      {
+        _id: {
+          $in: photoIds
+        }
+      },
+      (err, data) => {
+        res.redirect('/users');
+      }
+  );
 });
+})
 
 function isLoggedIn(req, res, next){
   if(req.isAuthenticated()){
