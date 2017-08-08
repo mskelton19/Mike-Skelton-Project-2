@@ -44,6 +44,10 @@ app.get('/', (req, res) => {
   res.render('index.ejs');
 })
 
+app.get('/secret', isLoggedIn, (req, res) => {
+  res.render('secret.ejs')
+})
+
 // Auth routes
 // ****Use this moi
 app.get('/register', (req, res) => {

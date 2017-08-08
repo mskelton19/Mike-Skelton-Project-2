@@ -1,8 +1,28 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/users.js');
+const passport              = require('passport');
+const localStrategy         = require('passport-local');
+const passportLocalMongoose = require('passport-local-mongoose');
+const bodyParser            = require('body-parser');
+const methodOverride        = require('method-override');
 
-router.get('/users', (req, res) => {
+router.use(require('express-session')({
+  secret: 'Stuck in a glass case of emotion',
+  resave: false,
+  saveUninitialized: false
+}))
+
+router.use(bodyParser.urlencoded({extended: false}));
+router.use(methodOverride('_method'));
+router.use(passport.initialize());
+router.use(passport.session());
+
+passport.use(new localStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+router.get('/users', isLoggedIn, (req, res) => {
   User.find({}, (error, foundUser) => {
     res.render('users/index.ejs', {
       user: foundUser
@@ -47,6 +67,13 @@ router.delete('/users/:id', (req, res) => {
     res.redirect('/users');
   });
 });
+
+function isLoggedIn(req, res, next){
+  if(req.isAuthenticated()){
+    return next();
+  }
+  res.redirect('/login');
+}
 
 
 module.exports = router;
