@@ -1,30 +1,99 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <title></title>
   </head>
+
+  <header>
+
+    <div class='row'>
+
+      <div class='col-md-2'
+        <h1>Fish Finder</h1>
+      </div>
+
+      <div class='col-md-10'>
+        <form action='/login' method='POST'>
+        Username <input type='text' name='username'/>
+        Password <input type='password' name='password'/>
+        <button class='btn btn-primary'>Login</button>
+        </form>
+      </div>
+
+    </div>
+  </header>
+
   <body>
-    <h1>Landing Page</h1>
-    <br>
-    <a href='/photos'>Photos</a><br>
-    <a href='/register'>Sign Up</a><br>
-    <a href='/login'>Login</a><br>
-    <a href='/logout'>Logout</a><br>
+
+    <div class='button'>
+      <a href='/photos'>View Site as Guest</a>
+    </div>
+
+
+    <div class='register'>
+      <h1>Create Account</h1><br>
+      <form class='create' action='/register' method='POST'>
+        Username <input type='text' name='username'/><br>
+        Password <input type='password' name='password'/><br>
+        Location <input type='text' name='location'/><br><br>
+        <input type='submit' name='' value='Create User'/>
+      </form>
+    </div>
 
   </body>
 
   <style>
-    body {
-      display: block;
+
+    .row {
+      background-color: green;
+      height: 65px;
+      margin-bottom: 50px;
+    }
+
+    .create {
+      text-align: center;
+    }
+
+    .register {
       margin: 0 auto;
       text-align: center;
+      padding-top: 55px;
+      height: 300px;
       border: 1px solid black;
-      width: 250px;
-      padding: 1em;
+      width: 300px;
     }
+
+
+    .col-md-2 {
+      position: relative;
+      top: 25%;
+      font-size: 24px;
+      font-family: 'Gloria Hallelujah', cursive;
+      color: white;
+      left: 75px;
+    }
+
+    .col-md-10 {
+      position: relative;
+      top: 25%;
+      text-align: right;
+    }
+
+    h1 {
+      padding: 0px;
+      margin: 0;
+    }
+
+    .button {
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+
 
 
   </style>
