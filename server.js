@@ -8,6 +8,7 @@ const localStrategy         = require('passport-local');
 const passportLocalMongoose = require('passport-local-mongoose');
 const User                  = require('./models/users.js');
 
+
 app.use(require('express-session')({
   secret: 'Stuck in a glass case of emotion',
   resave: false,
@@ -45,7 +46,7 @@ app.get('/', (req, res) => {
 
 // Auth routes
 // ****Use this moi
-app.get('/register', isLoggedIn, (req, res) => {
+app.get('/register', (req, res) => {
   res.render('register.ejs');
 })
 
@@ -70,7 +71,7 @@ app.get('/login', function (req, res){
 
 // Login logic
 app.post('/login', passport.authenticate('local', {
-  successRedirect: '/photos',
+  successRedirect: '/users',
   failureRedirect: '/login'
 }), function(req, res) {
 })
