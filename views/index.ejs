@@ -35,12 +35,12 @@
 
 
     <div class='register'>
-      <h1>Create Account</h1><br>
+      <h3>Create Account</h3><br>
       <form class='create' action='/register' method='POST'>
-        Username <input type='text' name='username'/><br>
-        Password <input type='password' name='password'/><br>
+        Username <input type='text' name='username'/><br><br>
+        Password <input type='password' name='password'/><br><br>
         Location <input type='text' name='location'/><br><br>
-        <input type='submit' name='' value='Create User'/>
+        <input class='submit' type='submit' name='' value='Create User'/>
       </form>
     </div>
 
@@ -61,12 +61,30 @@
     .register {
       margin: 0 auto;
       text-align: center;
-      padding-top: 55px;
+      padding-top: 25px;
       height: 300px;
       border: 1px solid black;
       width: 300px;
+      background-color: lightgray;
+      color: green;
+      font-family: 'Gloria Hallelujah', cursive;
     }
 
+    input {
+      border: 1px solid darkgreen;
+      width: 150px;
+      margin: 0;
+    }
+
+    input :focus {
+      background-color: lightblue;
+    }
+
+    .submit {
+      background-color: green;
+      border-radius: 10%;
+      color: white;
+    }
 
     .col-md-2 {
       position: relative;
@@ -74,13 +92,13 @@
       font-size: 30px;
       font-family: 'Gloria Hallelujah', cursive;
       color: white;
-      left: 75px;
+      left: 10%;
     }
 
     .col-md-10 {
       position: relative;
       top: 25%;
-      text-align: right;
+      left: 40%;
     }
 
     h1 {
