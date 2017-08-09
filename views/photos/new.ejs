@@ -6,8 +6,26 @@
   </head>
   <body>
 
+    <header>
+
+      <div class='row'>
+
+        <div class='col-md-2'>
+          <h1>Fish Finder</h1>
+        </div>
+
+        <div class='col-md-10'>
+          <a href='/photos'>Photos</a>
+          <a href='/users'>Anglers</a>
+          <a href='/logout'>Logout</a>
+        </div>
+
+      </div>
+
+    </header>
+
     <div class='new'>
-      <h1>New Photo</h1>
+      <h1>New Photo</h1><br>
 
       <form action='/photos' method='POST'>
         Username:<select name='userId'>
@@ -33,7 +51,7 @@
     margin: 0 auto;
     text-align: center;
     padding-top: 25px;
-    height: 425px;
+    height: 450px;
     border: 1px solid black;
     width: 300px;
     background-color: lightgray;
@@ -41,7 +59,34 @@
     font-family: 'Gloria Hallelujah', cursive;
   }
 
+  .row {
+    background-color: green;
+    height: 65px;
+    margin-bottom: 50px;
+  }
 
+  .col-md-2 {
+    position: relative;
+    top: -10%;
+    font-size: 30px;
+    font-family: 'Gloria Hallelujah', cursive;
+    color: white;
+    left: 10%;
+  }
+
+  .col-md-10 {
+    position: relative;
+    top: 35%;
+    left: 60%;
+    color: white;
+    font-size: 16px;
+  }
+
+  a {
+    color: white;
+    padding-right: 20px;
+    font-family: 'Gloria Hallelujah', cursive;
+  }
 
   </style>
 
