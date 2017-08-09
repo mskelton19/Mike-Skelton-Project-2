@@ -7,25 +7,27 @@
   <body>
     <header>
 
-        <div class='row'>
+      <div class='row'>
 
-          <div class='col-md-2'
-            <h1>Fish Finder</h1>
-          </div>
+      <div class='col-md-2'>
+        <a href='/'>Fish Finder</a>
+      </div>
 
+      <div class='col-md-10'>
+        <a href='/photos'>Photos</a>
+        <a href='/users'>Anglers</a>
+        <a href='/logout'>Logout</a>
+      </div>
+
+    </div>
     </header>
 
-    <nav>
-      <a class='nav' href='/'>Home</a>
-      <a class='nav' href='/users'>Users</a>
-      <a class='nav' href='/photos/new'>Add Photo</a>
-    </nav>
 
     <div>
       <ul>
         <% for(let i = 0; i < photo.length; i++) {%>
           <li>
-            <a href='/photos/<%=photo[i].id%>'><img  src='<%=photo[i].img%>' class="img-thumbnail"></a><br>
+            <a class='pic' href='/photos/<%=photo[i].id%>'><img  src='<%=photo[i].img%>' class="img-thumbnail"></a><br>
             <!-- Posted By: <%=photo.username%><br>
             Date: <%=photo[i].date%><br>
             Location: <%=photo[i].location%><br>
@@ -50,15 +52,6 @@
   .row {
     background-color: green;
     height: 65px;
-  }
-
-.col-md-2 {
-    position: relative;
-    top: 15%;
-    font-size: 30px;
-    font-family: 'Gloria Hallelujah', cursive;
-    color: white;
-    left: 10%;
   }
 
   h1 {
@@ -88,6 +81,7 @@
   }
 
   img {
+    margin: auto;
     width: 250px;
     height: 200px;
     padding: 1em;
@@ -95,9 +89,42 @@
     background-color: lightblue;
   }
 
+  .pic {
+
+  }
+
   .nav {
     display: inline-block;
     padding-right: 45px;
+  }
+
+  .col-md-2 {
+    position: relative;
+    top: 10%;
+    font-size: 35px;
+    font-family: 'Gloria Hallelujah', cursive;
+    color: white;
+    left: 10%;
+  }
+
+  .col-md-10 {
+    position: relative;
+    top: 35%;
+    left: 60%;
+    color: white;
+    font-size: 16px;
+  }
+
+  .row a {
+      color: white;
+      padding-right: 20px;
+      font-family: 'Gloria Hallelujah', cursive;
+  }
+
+  .row {
+    background-color: green;
+    height: 65px;
+    margin-bottom: 50px;
   }
 
   </style>

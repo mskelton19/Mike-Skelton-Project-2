@@ -5,7 +5,6 @@ const Schema    = mongoose.Schema;
 const photoSchema = new mongoose.Schema ({
   username: {type: String},
   img: {type: String},
-  username: {type: String},
   date: {type: Date},
   location: {type: String},
   species: {type: String},

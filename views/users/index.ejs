@@ -5,11 +5,22 @@
     <title></title>
   </head>
   <body>
-    <h1>User Landing Page</h1>
+    <header>
 
-    <a href='/photos'>Photos</a>
-    <a href='/'>Home</a>
-    <a href='/logout'>Logout</a>
+      <div class='row'>
+
+      <div class='col-md-2'>
+        <a href='/'>Fish Finder</a>
+      </div>
+
+      <div class='col-md-10'>
+        <a href='/photos'>Photos</a>
+        <a href='/users'>Anglers</a>
+        <a href='/logout'>Logout</a>
+      </div>
+
+    </div>
+    </header>
 
     <ul>
       <% for(let i = 0; i < user.length; i++) { %>
@@ -27,4 +38,36 @@
     <% } %>
     </ul>
   </body>
+
+
+  <style>
+  .col-md-2 {
+    position: relative;
+    top: 10%;
+    font-size: 35px;
+    font-family: 'Gloria Hallelujah', cursive;
+    color: white;
+    left: 10%;
+  }
+
+  .col-md-10 {
+    position: relative;
+    top: 35%;
+    left: 60%;
+    color: white;
+    font-size: 16px;
+  }
+
+  .row a {
+      color: white;
+      padding-right: 20px;
+      font-family: 'Gloria Hallelujah', cursive;
+  }
+
+  .row {
+    background-color: green;
+    height: 65px;
+    margin-bottom: 50px;
+  }
+  </style>
 </html>
