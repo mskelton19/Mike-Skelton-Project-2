@@ -16,9 +16,9 @@
     </header>
 
     <nav>
-      <a href='/'>Home</a>
-      <a href='/users'>Users</a>
-      <a href='/photos/new'>Add Photo</a>
+      <a class='nav' href='/'>Home</a>
+      <a class='nav' href='/users'>Users</a>
+      <a class='nav' href='/photos/new'>Add Photo</a>
     </nav>
 
     <div>
@@ -26,17 +26,17 @@
         <% for(let i = 0; i < photo.length; i++) {%>
           <li>
             <a href='/photos/<%=photo[i].id%>'><img  src='<%=photo[i].img%>' class="img-thumbnail"></a><br>
-            Posted By: <%=photo.username%><br>
+            <!-- Posted By: <%=photo.username%><br>
             Date: <%=photo[i].date%><br>
             Location: <%=photo[i].location%><br>
             Species: <%=photo[i].type%><br>
-            Bait: <%=photo[i].bait%><br>
+            Bait: <%=photo[i].bait%><br> -->
 
-            <form action='/photos/<%=photo[i].id%>?_method=DELETE' method='POST'>
+            <!-- <form action='/photos/<%=photo[i].id%>?_method=DELETE' method='POST'>
               <input type='submit' value='Delete Picture'/><br>
-            </form>
+            </form> -->
 
-            <a href='/photos/<%=photo[i].id%>/edit' role='button' class='btn btn-primary btn-xs'>Edit Photo</a>
+            <!-- <a href='/photos/<%=photo[i].id%>/edit' role='button' class='btn btn-primary btn-xs'>Edit Photo</a> -->
 
           </li>
         <% } %>
@@ -50,7 +50,6 @@
   .row {
     background-color: green;
     height: 65px;
-    margin-bottom: 50px;
   }
 
 .col-md-2 {
@@ -81,8 +80,11 @@
   nav {
     text-align: center;
     border: 1px solid black;
-    padding: 1em;
-    font-size: 20px;
+    padding: 2px;
+    font-size: 15px;
+    margin: 0;
+    padding-right: 20px;
+    background-color: lightgreen;
   }
 
   img {
@@ -93,6 +95,10 @@
     background-color: lightblue;
   }
 
+  .nav {
+    display: inline-block;
+    padding-right: 45px;
+  }
 
   </style>
 
