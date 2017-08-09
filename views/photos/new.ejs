@@ -1,28 +1,48 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8">
+    <% include ../partials/head.ejs %>
     <title></title>
   </head>
   <body>
-    <h1>New Photo</h1>
 
-    <form action='/photos' method='POST'>
-      Username:<select name='userId'>
-        <% for(let i = 0; i < users.length; i++){ %>
-          <option value='<%=users[i]._id%>'><%=users[i].username%></option>
-        <% } %>
-      </select> <br>
-      Image: <input type='text' name='img'/><br>
-      Date:  <input type='text' name='date'/><br>
-      Location: <input type='text' name='location'/><br>
-      Type: <input type='text' name='type'/><br>
-      Bait: <input type='text' name='bait'/><br>
-      <input type='submit' value='Post Photo'/><br>
-    </form>
+    <div class='new'>
+      <h1>New Photo</h1>
+
+      <form action='/photos' method='POST'>
+        Username:<select name='userId'>
+          <% for(let i = 0; i < users.length; i++){ %>
+            <option value='<%=users[i]._id%>'><%=users[i].username%></option>
+          <% } %>
+        </select> <br><br>
+        Image: <input type='text' name='img'/><br><br>
+        Date:  <input type='text' name='date'/><br><br>
+        Location: <input type='text' name='location'/><br><br>
+        Species: <input type='text' name='species'/><br><br>
+        Bait: <input type='text' name='bait'/><br><br>
+        <input type='submit' value='Post Photo'/><br><br>
+      </form>
+    </div>
 
   </body>
+
+
+  <style>
+
+  .new {
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 25px;
+    height: 425px;
+    border: 1px solid black;
+    width: 300px;
+    background-color: lightgray;
+    color: green;
+    font-family: 'Gloria Hallelujah', cursive;
+  }
+
+
+
+  </style>
 
 </html>

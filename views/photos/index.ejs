@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8">
+  <% include ../partials/head.ejs %>
     <title></title>
   </head>
   <body>
     <header>
-      <h1>Photos Landing Page</h1>
+
+        <div class='row'>
+
+          <div class='col-md-2'
+            <h1>Fish Finder</h1>
+          </div>
+
     </header>
 
     <nav>
@@ -17,8 +21,8 @@
       <a href='/photos/new'>Add Photo</a>
     </nav>
 
-    <div class='row'>
-      <ul class='container'>
+    <div>
+      <ul>
         <% for(let i = 0; i < photo.length; i++) {%>
           <li>
             <a href='/photos/<%=photo[i].id%>'><img  src='<%=photo[i].img%>' class="img-thumbnail"></a><br>
@@ -42,6 +46,21 @@
   </body>
 
   <style>
+
+  .row {
+    background-color: green;
+    height: 65px;
+    margin-bottom: 50px;
+  }
+
+.col-md-2 {
+    position: relative;
+    top: 15%;
+    font-size: 30px;
+    font-family: 'Gloria Hallelujah', cursive;
+    color: white;
+    left: 10%;
+  }
 
   h1 {
     text-align: center;

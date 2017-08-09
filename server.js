@@ -72,7 +72,7 @@ app.get('/login', function (req, res){
 // Login logic
 app.post('/login', passport.authenticate('local', {
   successRedirect: '/photos',
-  failureRedirect: '/login'
+  failureRedirect: '/'
 }), function(req, res) {
 })
 

@@ -8,7 +8,7 @@ const photoSchema = new mongoose.Schema ({
   username: {type: String},
   date: {type: Date},
   location: {type: String},
-  type: {type: String},
+  species: {type: String},
   bait: {type: String}
 })
 
