@@ -29,16 +29,45 @@
     Location: <%=photo.location%><br>
     Species: <%=photo.species%><br>
     Bait: <%=photo.bait%><br>
+    Latitude: <%=photo.lat%><br>
+    Longitude: <%=photo.lng%>
 
     <form action='/photos/<%=photo.id%>?_method=DELETE' method='POST'>
         <input type='submit' value='Delete Picture'/><br>
     </form>
 
-  <a href='/photos/<%=photo.id%>/edit' role='button' class='btn btn-primary btn-xs'>Edit Photo</a>
+    <a href='/photos/<%=photo.id%>/edit' role='button' class='btn btn-primary btn-xs'>Edit Photo</a>
+
+  <h3>Location</h3>
+      <div id="map"></div>
+
+      <script>
+      function initMap() {
+        var lati = <%=photo.lat%>;
+        var longi = <%=photo.lng%>;
+        var uluru = {lat: lati, lng: longi};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 15,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+        }
+        </script>
+
+      <script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBBwSRcjgTDYRbqUY0uQe-160PPJ1g0Iy4&callback=initMap'> </script>
 
   </body>
 
   <style>
+
+   #map {
+     width: 33%;
+     height: 400px;
+     margin: 0 auto;
+   }
 
   nav a {
     padding-right: 25px;

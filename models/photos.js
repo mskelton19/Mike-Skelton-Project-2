@@ -8,7 +8,9 @@ const photoSchema = new mongoose.Schema ({
   date: {type: Date},
   location: {type: String},
   species: {type: String},
-  bait: {type: String}
+  bait: {type: String},
+  lat: {type: String},
+  lng: {type: String}
 })
 
 const Photo = mongoose.model('Photo', photoSchema);

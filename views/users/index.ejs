@@ -25,7 +25,7 @@
     <ul>
       <% for(let i = 0; i < user.length; i++) { %>
         <li>
-          Username: <a href='/users/<%=user[i].id%>'><%=user[i].username%></a><br>
+          <a href='/users/<%=user[i].id%>'><%=user[i].username%></a><br>
           Location: <%=user[i].location%><br>
 
           <form action='users/<%=user[i].id%>?_method=DELETE' method='POST'>
@@ -41,6 +41,12 @@
 
 
   <style>
+
+  li {
+    display: inline-block;
+    padding: 2em;
+    border: 1px solid green;
+  }
   .col-md-2 {
     position: relative;
     top: 10%;
@@ -69,5 +75,6 @@
     height: 65px;
     margin-bottom: 50px;
   }
+
   </style>
 </html>
