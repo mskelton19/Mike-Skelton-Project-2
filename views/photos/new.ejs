@@ -41,7 +41,7 @@
         Bait: <input type='text' name='bait'/><br><br>
         Latitude: <input type='text' name='lat'/><br><br>
         Longitude: <input type='text' name='lng'/><br><br>
-        <input type='submit' value='Post Photo'/><br><br>
+        <input class='submit' type='submit' value='Post Photo'/><br><br>
       </form>
     </div>
 
@@ -50,20 +50,25 @@
 
   <style>
 
+  body {
+    background-color: #43AA8B;
+  }
+
   .new {
     margin: 0 auto;
     text-align: center;
-    padding-top: 25px;
+    padding-top: 15px;
     height: 550px;
-    border: 1px solid black;
-    width: 300px;
-    background-color: lightgray;
-    color: green;
+    width: 400px;
     font-family: 'Gloria Hallelujah', cursive;
+    border: 2.5px dotted #F15573;
+    background-color: #B2B09B;
+    color: #226f54;
+    font-size: 15px;
   }
 
   .row {
-    background-color: green;
+    background-color: #226f54;
     height: 65px;
     margin-bottom: 50px;
   }
@@ -89,6 +94,16 @@
     color: white;
     padding-right: 20px;
     font-family: 'Gloria Hallelujah', cursive;
+  }
+
+  h1 {
+    font-weight: bold;
+  }
+
+  .submit {
+    background-color: #226f54;
+    border-radius: 10%;
+    color: white;
   }
 
   </style>

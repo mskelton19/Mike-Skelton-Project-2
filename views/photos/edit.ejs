@@ -24,17 +24,17 @@
     </header>
 
     <div class='edit'>
-    <h2>Edit Post</h2>
+    <h2>Edit Post</h2><br>
 
       <form action='/photos/<%=photo.id%>?_method=PUT' method='POST'>
-        Image: <input type='text' name='img' value='<%=photo.img%>'/><br>
-        Date:  <input type='text' name='date' value='<%=photo.date%>'/><br>
-        Location: <input type='text' name='location' value='<%=photo.location%>'/><br>
-        Species: <input type='text' name='species' value='<%=photo.species%>'/><br>
-        Bait: <input type='text' name='bait' value='<%=photo.bait%>'/><br>
-        Latitude: <input type='text' name='lat' value='<%=photo.lat%>'/><br>
+        Image: <input type='text' name='img' value='<%=photo.img%>'/><br><br>
+        Date:  <input type='text' name='date' value='<%=photo.date%>'/><br><br>
+        Location: <input type='text' name='location' value='<%=photo.location%>'/><br><br>
+        Species: <input type='text' name='species' value='<%=photo.species%>'/><br><br>
+        Bait: <input type='text' name='bait' value='<%=photo.bait%>'/><br><br>
+        Latitude: <input type='text' name='lat' value='<%=photo.lat%>'/><br><br>
         Longitude: <input type='text' name='lng' value='<%=photo.lng%>'/><br><br>
-        <input type='submit' value='Edit Photo'/><br>
+        <input class='submit' type='submit' value='Edit Photo'/><br><br>
       </form>
     </div>
 
@@ -42,8 +42,12 @@
 
   <style>
 
+  body {
+    background-color: #43AA8B;
+  }
+
   .row {
-    background-color: green;
+    background-color: #226f54;
     height: 65px;
     margin-bottom: 50px;
   }
@@ -68,12 +72,16 @@
   }
 
   .edit {
-    padding-top: 15px;
-    text-align: center;
-    border: 1px solid black;
     margin: 0 auto;
-    width: 300px;
-    height: 350px;
+    text-align: center;
+    padding-top: 15px;
+    height: 500px;
+    width: 400px;
+    font-family: 'Gloria Hallelujah', cursive;
+    border: 2.5px dotted #F15573;
+    background-color: #B2B09B;
+    color: #226f54;
+    font-size: 15px;
   }
 
   .row a {
@@ -81,6 +89,15 @@
     padding-right: 20px;
   }
 
+  h2 {
+    font-weight: bold;
+  }
+
+  .submit {
+    background-color: #226f54;
+    border-radius: 10%;
+    color: white;
+  }
 
 
   </style>

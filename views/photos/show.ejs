@@ -26,18 +26,21 @@
     </header>
 
     <div class='post'>
+      <div class='info'>
       <a href='/photos/<%=photo.id%>'><img src='<%=photo.img%>'></a><br>
-      Posted By: <a href='/users/<%=user._id%>'><%=user.username%></a><br>
+      <a href='/users/<%=user._id%>'><%=user.username%></a><br>
       Location: <%=photo.location%><br>
       Species: <%=photo.species%><br>
       Bait: <%=photo.bait%><br>
       Latitude: <%=photo.lat%><br>
-      Longitude: <%=photo.lng%><br>
+      Longitude: <%=photo.lng%><br><br>
+
 
       <a href='/photos/<%=photo.id%>/edit' role='button' class='btn btn-primary btn-xs'>Edit Photo</a>
+      </div>
 
 
-      <h3>Location</h3>
+      <h2>Location</h2>
           <div id="map"></div>
 
           <script>
@@ -68,16 +71,33 @@
 
   <style>
 
+  body {
+    background-color: #43AA8B;
+  }
+
   .post {
-    border: 1px solid black;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 15px;
+    height: 1000px;
+    width: 50%;
+    font-family: 'Gloria Hallelujah', cursive;
+    border: 2.5px dotted #F15573;
+    background-color: #B2B09B;
+    color: #226f54;
+    font-size: 20px;
+  }
+
+  .info {
+    background-color: white;
     width: 50%;
     margin: 0 auto;
-    padding-top: 25px;
-    padding-bottom: 25px;
+    padding-bottom: 10px;
+    border: 2.5px solid #226f54;
   }
 
    #map {
-     width: 50%;
+     width: 60%;
      height: 400px;
      margin: 0 auto;
    }
@@ -91,6 +111,7 @@
   }
 
   img {
+    padding-top: 20px;
     width: 250px;
     display: block;
     margin: auto;
@@ -128,6 +149,10 @@
 
   form {
     padding-top: 25px;
+  }
+
+  h2 {
+    font-weight: bold;
   }
 
 
