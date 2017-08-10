@@ -26,19 +26,19 @@
 
   <body>
 
-    <div class='button'>
-      <a class='guest' href='/photos'>View Site as Guest</a>
-    </div>
-
-
     <div class='register'>
       <h3>Create Account</h3><br>
       <form class='create' action='/register' method='POST'>
         Username <input type='text' name='username'/><br><br>
         Password <input type='password' name='password'/><br><br>
         Location <input type='text' name='location'/><br><br>
+        Profile Pic (URL) <input type="text" name='profilePic'/><br><br>
         <input class='submit' type='submit' name='' value='Create User'/>
       </form>
+    </div>
+
+    <div class='button'>
+      <a class='guest' href='/photos'>View Site as Guest</a>
     </div>
 
   </body>
@@ -64,14 +64,16 @@
     .register {
       margin: 0 auto;
       text-align: center;
+      margin-top: 125px;
       padding-top: 20px;
-      height: 350px;
-      border: 2.5px dotted #da9533;
-      width: 300px;
+      height: 400px;
+      border: 2.5px solid #425384;
+      width: 350px;
       background-color: #B2B09B;
       color: #226f54;
       font-family: 'Gloria Hallelujah', cursive;
       font-size: 20px;
+      margin-bottom: 20px;
     }
 
     input {
@@ -80,6 +82,7 @@
       margin: 0;
       color: black;
       font-size: 14px;
+      font-family: arial;
     }
 
     input :focus {
@@ -121,18 +124,19 @@
     }
 
     .button {
-      margin-top: 150px;
       margin-bottom: 10px;
       text-align: center;
       color: black;
     }
     .guest {
       color: white;
-      margin-top: 100px;
+      font-family: 'Gloria Hallelujah', cursive;
+      font-size: 16px;
     }
 
     .login {
       color: white;
+      font-family: 'Gloria Hallelujah', cursive;
     }
 
     .btn {

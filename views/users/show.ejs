@@ -26,8 +26,9 @@
 
     <h3><%=user.username%></h3>
 
-    <section>
-      <h2>Posts by <%=user.username%></h2>
+
+    <h2>Posts by <%=user.username%></h2>
+    <section class='container'>
         <ul>
           <% for(let i = 0; i < user.photos.length; i++) { %>
             <li><img src='<%=user.photos[i].img%>'></li>
@@ -39,6 +40,31 @@
   </body>
 
   <style>
+
+  body {
+    background-image: url('http://wallpapercave.com/wp/K6IjzXu.jpg');
+    background-size: 2500px 1000px;
+    background-repeat: no-repeat;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+  }
+
+  li {
+      display: inline-block;
+      padding: 1em;
+      border: 2.5px solid #425384;
+      border-radius: 10%;
+      margin-bottom: 10px;
+      margin-right: 10px;
+      background-color: #B2B09B;
+    }
 
   .col-md-2 {
     position: relative;
@@ -64,7 +90,7 @@
   }
 
   .row {
-    background-color: green;
+    background-color: #226846;
     height: 65px;
     margin-bottom: 50px;
   }
@@ -73,10 +99,12 @@
 
     h3 {
       text-align: center;
+      color: white;
     }
 
     h2 {
       text-align: center;
+      color: white;
     }
     li {
       padding: 1em;
