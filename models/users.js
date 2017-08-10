@@ -7,6 +7,7 @@ const userSchema = new mongoose.Schema ({
   username: {type: String},
   password: {type: String},
   location: {type: String},
+  profilePic: {type: String},
   photos: [Photo.schema]
 });
 

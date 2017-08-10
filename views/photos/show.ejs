@@ -10,61 +10,74 @@
 
       <div class='row'>
 
-      <div class='col-md-2'>
-        <a href='/'>Fish Finder</a>
-      </div>
+        <div class='col-md-2'>
+          <a href='/photos'>Fish Finder</a>
+        </div>
 
-      <div class='col-md-10'>
-        <a href='/photos'>Photos</a>
-        <a href='/users'>Anglers</a>
-        <a href='/logout'>Logout</a>
-      </div>
+        <div class='col-md-10'>
+          <a href='/photos'>Photos</a>
+          <a href='/users'>Anglers</a>
+          <a href='/'>Sign Up</a>
+          <a href='/logout'>Logout</a>
+        </div>
 
     </div>
 
     </header>
 
-    <a href='/photos/<%=photo.id%>'><img src='<%=photo.img%>'></a><br>
-    Posted By: <a href='/users/<%=user._id%>'><%=user.username%></a><br>
-    Location: <%=photo.location%><br>
-    Species: <%=photo.species%><br>
-    Bait: <%=photo.bait%><br>
-    Latitude: <%=photo.lat%><br>
-    Longitude: <%=photo.lng%><br>
+    <div class='post'>
+      <a href='/photos/<%=photo.id%>'><img src='<%=photo.img%>'></a><br>
+      Posted By: <a href='/users/<%=user._id%>'><%=user.username%></a><br>
+      Location: <%=photo.location%><br>
+      Species: <%=photo.species%><br>
+      Bait: <%=photo.bait%><br>
+      Latitude: <%=photo.lat%><br>
+      Longitude: <%=photo.lng%><br>
 
-    <a href='/photos/<%=photo.id%>/edit' role='button' class='btn btn-primary btn-xs'>Edit Photo</a>
+      <a href='/photos/<%=photo.id%>/edit' role='button' class='btn btn-primary btn-xs'>Edit Photo</a>
 
-  <h3>Location</h3>
-      <div id="map"></div>
 
-      <script>
-      function initMap() {
-        var lati = <%=photo.lat%>;
-        var longi = <%=photo.lng%>;
-        var uluru = {lat: lati, lng: longi};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 15,
-          center: uluru
-        });
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
-        });
-        }
-        </script>
+      <h3>Location</h3>
+          <div id="map"></div>
 
-      <script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBBwSRcjgTDYRbqUY0uQe-160PPJ1g0Iy4&callback=initMap'> </script>
+          <script>
+          function initMap() {
+            var lati = <%=photo.lat%>;
+            var longi = <%=photo.lng%>;
+            var uluru = {lat: lati, lng: longi};
+            var map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 15,
+              center: uluru
+            });
+            var marker = new google.maps.Marker({
+              position: uluru,
+              map: map
+            });
+            }
+            </script>
 
-      <form action='/photos/<%=photo.id%>?_method=DELETE' method='POST'>
-          <input type='submit' value='Delete Post'/><br>
-      </form>
+          <script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBBwSRcjgTDYRbqUY0uQe-160PPJ1g0Iy4&callback=initMap'> </script>
+        </div>
+
+
+          <form action='/photos/<%=photo.id%>?_method=DELETE' method='POST'>
+              <input type='submit' value='Delete Post'/><br>
+          </form>
 
   </body>
 
   <style>
 
+  .post {
+    border: 1px solid black;
+    width: 50%;
+    margin: 0 auto;
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
    #map {
-     width: 33%;
+     width: 50%;
      height: 400px;
      margin: 0 auto;
    }
@@ -81,6 +94,7 @@
     width: 250px;
     display: block;
     margin: auto;
+    height: 250;
   }
 
   .col-md-2 {
@@ -111,6 +125,11 @@
     height: 65px;
     margin-bottom: 50px;
   }
+
+  form {
+    padding-top: 25px;
+  }
+
 
 
   </style>

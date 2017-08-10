@@ -10,28 +10,33 @@
       <div class='row'>
 
       <div class='col-md-2'>
-        <a href='/'>Fish Finder</a>
+        <a href='/photos'>Fish Finder</a>
       </div>
 
       <div class='col-md-10'>
         <a href='/photos'>Photos</a>
         <a href='/users'>Anglers</a>
+        <a href='/'>Sign Up</a>
         <a href='/logout'>Logout</a>
       </div>
 
     </div>
     </header>
 
-    <form action='/photos/<%=photo.id%>?_method=PUT' method='POST'>
-      Image: <input type='text' name='img' value='<%=photo.img%>'/><br>
-      Date:  <input type='text' name='date' value='<%=photo.date%>'/><br>
-      Location: <input type='text' name='location' value='<%=photo.location%>'/><br>
-      Species: <input type='text' name='species' value='<%=photo.species%>'/><br>
-      Bait: <input type='text' name='bait' value='<%=photo.bait%>'/><br>
-      Latitude: <input type='text' name='lat' value='<%=photo.lat%>'/><br>
-      Longitude: <input type='text' name='lng' value='<%=photo.lng%>'/><br> 
-      <input type='submit' value='Edit Photo'/><br>
-    </form>
+    <div class='edit'>
+    <h2>Edit Post</h2>
+
+      <form action='/photos/<%=photo.id%>?_method=PUT' method='POST'>
+        Image: <input type='text' name='img' value='<%=photo.img%>'/><br>
+        Date:  <input type='text' name='date' value='<%=photo.date%>'/><br>
+        Location: <input type='text' name='location' value='<%=photo.location%>'/><br>
+        Species: <input type='text' name='species' value='<%=photo.species%>'/><br>
+        Bait: <input type='text' name='bait' value='<%=photo.bait%>'/><br>
+        Latitude: <input type='text' name='lat' value='<%=photo.lat%>'/><br>
+        Longitude: <input type='text' name='lng' value='<%=photo.lng%>'/><br><br>
+        <input type='submit' value='Edit Photo'/><br>
+      </form>
+    </div>
 
   </body>
 
@@ -43,9 +48,10 @@
     margin-bottom: 50px;
   }
   .col-md-2 {
+    color: white;
     position: relative;
     top: 15%;
-    font-size: 30px;
+    font-size: 35px;
     font-family: 'Gloria Hallelujah', cursive;
     color: white;
     left: 10%;
@@ -53,9 +59,29 @@
 
   .col-md-10 {
     position: relative;
-    top: 25%;
-    left: 40%;
+    top: 35%;
+    left: 57%;
+    color: white;
+    font-size: 16px;
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 16px;
   }
+
+  .edit {
+    padding-top: 15px;
+    text-align: center;
+    border: 1px solid black;
+    margin: 0 auto;
+    width: 300px;
+    height: 350px;
+  }
+
+  .row a {
+    color: white;
+    padding-right: 20px;
+  }
+
+
 
   </style>
 </html>

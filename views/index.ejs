@@ -14,7 +14,7 @@
       </div>
 
       <div class='col-md-10'>
-        <form action='/login' method='POST'>
+        <form class='login' action='/login' method='POST'>
         Username <input type='text' name='username'/>
         Password <input type='password' name='password'/>
         <button class='btn btn-primary'>Login</button>
@@ -27,7 +27,7 @@
   <body>
 
     <div class='button'>
-      <a href='/photos'>View Site as Guest</a>
+      <a class='guest' href='/photos'>View Site as Guest</a>
     </div>
 
 
@@ -45,8 +45,12 @@
 
   <style>
 
+    body {
+      background-color: #43AA8B;
+    }
+
     .row {
-      background-color: green;
+      background-color: #226f54;
       height: 65px;
       margin-bottom: 50px;
     }
@@ -59,16 +63,17 @@
       margin: 0 auto;
       text-align: center;
       padding-top: 20px;
-      height: 300px;
-      border: 1px solid black;
+      height: 350px;
+      border: 2px dotted #F15573;
       width: 300px;
-      background-color: lightgray;
-      color: green;
+      background-color: #B2B09B;
+      color: #226f54;
       font-family: 'Gloria Hallelujah', cursive;
+      font-size: 20px;
     }
 
     input {
-      border: 1px solid darkgreen;
+      border: 1px solid #226f54;
       width: 150px;
       margin: 0;
     }
@@ -77,8 +82,10 @@
       background-color: lightblue;
     }
 
+
+
     .submit {
-      background-color: green;
+      background-color: #226f54;
       border-radius: 10%;
       color: white;
     }
@@ -103,9 +110,18 @@
       margin: 0;
     }
 
+    h3 {
+      font-weight: bold;
+      font-size: 30px;
+    }
+
     .button {
       margin-bottom: 10px;
       text-align: center;
+      color: black;
+    }
+    .guest {
+      color: white;
     }
 
 

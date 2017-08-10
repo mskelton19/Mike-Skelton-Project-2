@@ -16,17 +16,21 @@
       <div class='col-md-10'>
         <a href='/photos'>Photos</a>
         <a href='/users'>Anglers</a>
+        <a href='/'>Sign Up</a>
         <a href='/logout'>Logout</a>
       </div>
 
     </div>
     </header>
 
+    <div class='container'>
     <ul>
       <% for(let i = 0; i < user.length; i++) { %>
         <li>
+          <img src='<%=user[i].profilePic%>'><br>
           <a href='/users/<%=user[i].id%>'><%=user[i].username%></a><br>
           Location: <%=user[i].location%><br>
+
 
           <form action='users/<%=user[i].id%>?_method=DELETE' method='POST'>
             <input type='submit' value='DELETE'/><br>
@@ -37,6 +41,7 @@
         </li>
     <% } %>
     </ul>
+    </div>
   </body>
 
 
@@ -46,6 +51,8 @@
     display: inline-block;
     padding: 2em;
     border: 1px solid green;
+    margin-bottom: 10px;
+    margin-right: 10px;
   }
   .col-md-2 {
     position: relative;
@@ -64,6 +71,15 @@
     font-size: 16px;
   }
 
+  .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+  }
+
   .row a {
       color: white;
       padding-right: 20px;
@@ -74,6 +90,13 @@
     background-color: green;
     height: 65px;
     margin-bottom: 50px;
+  }
+
+  img {
+    width: 250px;
+    height: 250px;
+    padding: 1em;
+    border: 1px solid black;
   }
 
   </style>
