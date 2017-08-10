@@ -34,7 +34,6 @@
         <% for(let i = 0; i < photo.length; i++) {%>
           <li>
             <a class='pic' href='/photos/<%=photo[i].id%>'><img  src='<%=photo[i].img%>'></a><br>
-            <p><%=user.username%></p>
             <!-- Posted By: <%=photo.username%><br>
             Date: <%=photo[i].date%><br>
             Location: <%=photo[i].location%><br>
@@ -85,13 +84,12 @@
 
   li {
       display: inline-block;
-      padding: .8em;
+      padding: 1em;
       border: 2.5px solid #425384;
       border-radius: 10%;
       margin-bottom: 10px;
       margin-right: 10px;
       background-color: #B2B09B;
-      color: white;
     }
 
   nav {
@@ -107,7 +105,6 @@
     height: 200px;
     display: block;
     margin: auto;
-    border-radius: 10%;
   }
 
   .nav {
