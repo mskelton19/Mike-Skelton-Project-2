@@ -11,7 +11,7 @@
       <div class='row'>
 
       <div class='col-md-2'>
-        <a href='/'>Fish Finder</a>
+        <a href='/photos'>Fish Finder</a>
       </div>
 
       <div class='col-md-10'>
@@ -24,8 +24,12 @@
     </div>
     </header>
 
-    <h3><%=user.username%></h3>
 
+    <img class='profile' src='<%=user.profilePic%>'>
+    <div class='info'>
+      <h3><%=user.username%></h3>
+      Location: <%=user.location%>
+    </div>
 
     <h2>Posts by <%=user.username%></h2>
     <section class='container'>
@@ -54,6 +58,10 @@
     justify-content: flex-start;
     align-items: center;
     text-align: center;
+  }
+
+  .profile {
+    border: 2.5px solid white;
   }
 
   li {
@@ -95,16 +103,23 @@
     margin-bottom: 50px;
   }
 
+  .info {
+    color: white;
+    text-align: center;
+    padding-bottom: 50px;
+  }
 
 
     h3 {
       text-align: center;
       color: white;
+      font-family: 'Gloria Hallelujah', cursive;
     }
 
     h2 {
       text-align: center;
       color: white;
+      font-family: 'Gloria Hallelujah', cursive;
     }
     li {
       padding: 1em;

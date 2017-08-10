@@ -50,7 +50,8 @@ router.get('/users/new', (req, res) => {
 router.get('/users/:id', (req, res) => {
   User.findById(req.params.id, (error, User) => {
     res.render('users/show.ejs', {
-      user: User
+      user: User,
+      photo: Photo
     })
   })
 })

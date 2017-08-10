@@ -26,7 +26,8 @@ passport.deserializeUser(User.deserializeUser());
 router.get('/photos', (req, res) => {
   Photo.find ({}, (error, allPhotos) => {
     res.render('photos/index.ejs', {
-      photo: allPhotos
+      photo: allPhotos,
+      user: User
     });
   })
 })
@@ -42,7 +43,8 @@ router.post('/photos', (req, res) => {
   User.findById(req.body.userId, (err, foundUser) => {
     foundUser.photos.push(createdPhoto);
     foundUser.save((err, data) => {
-      res.redirect('/photos');
+      res.redirect('/photos', {
+      });
     });
   })
   });

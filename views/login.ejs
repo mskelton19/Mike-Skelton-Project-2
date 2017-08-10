@@ -10,19 +10,18 @@
 
       <div class='row'>
 
-        <div class='col-md-2'>
-          <h1>Fish Finder</h1>
-        </div>
-
-        <div class='col-md-10'>
-          <form class='login' action='/login' method='POST'>
-          Username <input type='text' name='username'/>
-          Password <input type='password' name='password'/>
-          <button class='btn btn-primary'>Login</button>
-          </form>
-        </div>
-
+      <div class='col-md-2'>
+        <a href='/'>Fish Finder</a>
       </div>
+
+      <div class='col-md-10'>
+        <a href='/photos'>Photos</a>
+        <a href='/users'>Anglers</a>
+        <a href='/'>Sign Up</a>
+        <a href='/logout'>Logout</a>
+      </div>
+
+    </div>
     </header>
 
     <div class='loginPage'>
@@ -44,29 +43,24 @@
   <style>
 
   body {
-    background-color: #43AA8B;
+    background-image: url('http://wallpapercave.com/wp/K6IjzXu.jpg');
+    background-size: 2500px 1000px;
+    background-repeat: no-repeat;
   }
 
   .loginPage {
     margin: 0 auto;
     text-align: center;
-    padding-top: 15px;
-    height: 250px;
-    width: 400px;
-    font-family: 'Gloria Hallelujah', cursive;
-    border: 2.5px dotted #F15573;
+    margin-top: 125px;
+    padding-top: 20px;
+    height: 300px;
+    border: 2.5px solid #425384;
+    width: 350px;
     background-color: #B2B09B;
     color: #226f54;
-    font-size: 15px;
-  }
-
-  .col-md-2 {
-    position: relative;
-    top: -10%;
-    font-size: 30px;
     font-family: 'Gloria Hallelujah', cursive;
-    color: white;
-    left: 10%;
+    font-size: 20px;
+    margin-bottom: 20px;
   }
 
   .submit {
@@ -76,19 +70,34 @@
     }
 
 
-  .col-md-10 {
-    position: relative;
-    top: 25%;
-    left: 50%;
-  }
+    .col-md-2 {
+      position: relative;
+      top: 15%;
+      font-size: 30px;
+      font-family: 'Gloria Hallelujah', cursive;
+      color: white;
+      left: 10%;
+    }
+
+    .col-md-10 {
+      position: relative;
+      top: 35%;
+      left: 60%;
+    }
     form {
       font-size: 12px;
     }
 
     .row {
-      background-color: #226f54;
+      background-color: #226846;
       height: 65px;
       margin-bottom: 50px;
+    }
+
+    .row a {
+        color: white;
+        padding-right: 20px;
+        font-family: 'Gloria Hallelujah', cursive;
     }
 
   </style>
