@@ -27,7 +27,7 @@
 
     <div class='edit'>
 
-    <h1>Edit User</h1><br>
+    <h1 class='heading'>Edit User</h1><br>
     <form action='/users/<%=user.id%>?_method=PUT' method='POST'>
       Profile Pic: <input type='text' name='profilePic'/><br>
       Username: <input type='text' name='username' value='<%=user.username%>'/><br>
@@ -47,6 +47,10 @@
     font-family: 'Gloria Hallelujah', cursive;
     color: white;
     left: 10%;
+  }
+
+  .heading {
+    font-weight: bold;
   }
 
   .col-md-10 {

@@ -1,40 +1,94 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8">
+    <% include ./partials/head.ejs %>
     <title></title>
   </head>
   <body>
-    <h1>Login Page</h1>
 
-    <nav>
-      <a href='/'>Home</a>
-    </nav><br>
+    <header>
 
-    <form action='/login' method='POST'>
-      Username <input type='text' name='username'/><br>
-      Password <input type='password' name='password'/><br><br>
-      <button class='btn btn-primary'>Login</button>
-    </form>
+      <div class='row'>
+
+        <div class='col-md-2'>
+          <h1>Fish Finder</h1>
+        </div>
+
+        <div class='col-md-10'>
+          <form class='login' action='/login' method='POST'>
+          Username <input type='text' name='username'/>
+          Password <input type='password' name='password'/>
+          <button class='btn btn-primary'>Login</button>
+          </form>
+        </div>
+
+      </div>
+    </header>
+
+    <div class='loginPage'>
+      <h2>Login Page</h1>
+
+      <nav>
+        <a href='/'>Home</a>
+      </nav><br>
+
+      <form action='/login' method='POST'>
+        Username <input type='text' name='username'/><br>
+        Password <input type='password' name='password'/><br><br>
+        <button class='submit'>Login</button>
+      </form>
+    </div>
 
   </body>
 
   <style>
 
-    body {
-      position: relative
-      display: block;
-      margin: 0 auto;
-      text-align: center;
-      border: 1px solid black;
-      width: 250px;
-      padding: 1em;
+  body {
+    background-color: #43AA8B;
+  }
+
+  .loginPage {
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 15px;
+    height: 250px;
+    width: 400px;
+    font-family: 'Gloria Hallelujah', cursive;
+    border: 2.5px dotted #F15573;
+    background-color: #B2B09B;
+    color: #226f54;
+    font-size: 15px;
+  }
+
+  .col-md-2 {
+    position: relative;
+    top: -10%;
+    font-size: 30px;
+    font-family: 'Gloria Hallelujah', cursive;
+    color: white;
+    left: 10%;
+  }
+
+  .submit {
+      background-color: #226f54;
+      border-radius: 10%;
+      color: white;
     }
 
+
+  .col-md-10 {
+    position: relative;
+    top: 25%;
+    left: 50%;
+  }
     form {
       font-size: 12px;
+    }
+
+    .row {
+      background-color: #226f54;
+      height: 65px;
+      margin-bottom: 50px;
     }
 
   </style>
