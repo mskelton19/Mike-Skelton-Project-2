@@ -32,8 +32,8 @@
           Location: <%=user[i].location%><br>
 
 
-          <form action='users/<%=user[i].id%>?_method=DELETE' method='POST'>
-            <input type='submit' value='DELETE'/><br>
+          <!-- <form action='users/<%=user[i].id%>?_method=DELETE' method='POST'>
+            <input type='submit' value='DELETE'/><br> -->
 
           <a href='users/<%=user[i].id%>/edit'>Edit User<a>
           </form>
@@ -55,12 +55,13 @@
 
   li {
     display: inline-block;
-    padding: 2em;
+    padding: 1em;
     border: 2.5px solid #425384;
     border-radius: 10%;
     margin-bottom: 10px;
     margin-right: 10px;
     background-color: #B2B09B;
+    color: #425384;
   }
   .col-md-2 {
     position: relative;
@@ -101,8 +102,8 @@
   }
 
   img {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     padding: 1em;
     border: 1px solid #FAB949;
     background-color: #226f54;

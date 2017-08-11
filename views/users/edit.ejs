@@ -29,9 +29,9 @@
 
     <h1 class='heading'>Edit User</h1><br>
     <form class='form' action='/users/<%=user.id%>?_method=PUT' method='POST'>
-      Profile Pic: <input type='text' name='profilePic'/><br><br>
+      Profile Pic: <input type='text' name='profilePic' /><br><br>
       Username: <input type='text' name='username' value='<%=user.username%>'/><br><br>
-      Location: <input class='form1' type='text' name='location' value='<%=user.location%>'/><br><br>
+      Location: <input class='form1' type='text' name='location'/><br><br>
       <input class='submit' type='submit' value='Edit User'/>
     </form>
   </div>
