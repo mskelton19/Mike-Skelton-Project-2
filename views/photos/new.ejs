@@ -34,13 +34,13 @@
             <option value='<%=users[i]._id%>'><%=users[i].username%></option>
           <% } %>
         </select> <br><br>
-        Image: <input type='text' name='img'/><br><br>
-        Date:  <input type='text' name='date'/><br><br>
-        Location: <input type='text' name='location'/><br><br>
-        Species: <input type='text' name='species'/><br><br>
-        Bait: <input type='text' name='bait'/><br><br>
-        Latitude: <input type='text' name='lat'/><br><br>
-        Longitude: <input type='text' name='lng'/><br><br>
+        Image: <input class='form1' type='text' name='img'/><br><br>
+        Date:  <input class='form2' type='text' name='date'/><br><br>
+        Location: <input class='form3' type='text' name='location'/><br><br>
+        Species: <input class='form4' type='text' name='species'/><br><br>
+        Bait: <input class='form5' type='text' name='bait'/><br><br>
+        Latitude: <input class='form6' type='text' name='lat'/><button id='openModal'>?</button><br><br>
+        Longitude: <input class='form7' type='text' name='lng'/><br><br>
         <input class='submit' type='submit' value='Post Photo'/><br><br>
       </form>
     </div>
@@ -91,6 +91,43 @@
     color: white;
     font-size: 16px;
   }
+
+  .form1 {
+    position: relative;
+    left: 4.5%;
+  }
+
+  .form2 {
+    position: relative;
+    left: 6.5%;
+  }
+
+  .form3 {
+    position: relative;
+    left: 2.75%;
+  }
+
+  .form4 {
+    position: relative;
+    left: 4.25%;
+  }
+
+  .form5 {
+    position: relative;
+    left: 6.5%;
+  }
+
+  .form6 {
+    position: relative;
+    left: 5%;
+  }
+
+  .form7 {
+    position: relative;
+    left: 1.75%;
+  }
+
+
 
   a {
     color: white;

@@ -27,14 +27,14 @@
     <h2>Edit Post</h2><br>
 
       <form action='/photos/<%=photo.id%>?_method=PUT' method='POST'>
-        Image: <input type='text' name='img' value='<%=photo.img%>'/><br><br>
-        Date:  <input type='text' name='date' value='<%=photo.date%>'/><br><br>
-        Location: <input type='text' name='location' value='<%=photo.location%>'/><br><br>
-        Species: <input type='text' name='species' value='<%=photo.species%>'/><br><br>
-        Bait: <input type='text' name='bait' value='<%=photo.bait%>'/><br><br>
-        Latitude: <input type='text' name='lat' value='<%=photo.lat%>'/><br><br>
-        Longitude: <input type='text' name='lng' value='<%=photo.lng%>'/><br><br>
-        <input type='submit' value='Edit Photo'/><br><br>
+        Image: <input class='form1' type='text' name='img' value='<%=photo.img%>'/><br><br>
+        Date:  <input class='form2' type='text' name='date' value='<%=photo.date%>'/><br><br>
+        Location: <input class='form3' type='text' name='location' value='<%=photo.location%>'/><br><br>
+        Species: <input class='form4' type='text' name='species' value='<%=photo.species%>'/><br><br>
+        Bait: <input class='form5' type='text' name='bait' value='<%=photo.bait%>'/><br><br>
+        Latitude: <input class='form6' type='text' name='lat' value='<%=photo.lat%>'/><br><br>
+        Longitude: <input class='form7' type='text' name='lng' value='<%=photo.lng%>'/><br><br>
+        <input class='submit' type='submit' value='Edit Photo'/><br><br>
       </form>
     </div>
 
@@ -73,6 +73,10 @@
     font-size: 16px;
   }
 
+  .submit {
+    background-color: #226f54;
+  }
+
   .edit {
     margin: 0 auto;
     text-align: center;
@@ -86,6 +90,34 @@
     font-size: 15px;
   }
 
+  .form1 {
+    position: relative;
+    left: 5%;
+  }
+  .form2 {
+    position: relative;
+    left: 7%;
+  }
+  .form3 {
+    position: relative;
+    left: 3.5%;
+  }
+  .form4 {
+    position: relative;
+    left: 5%;
+  }
+  .form5 {
+    position: relative;
+    left: 7%;
+  }
+  .form6 {
+    position: relative;
+    left: 3%;
+  }
+  .form7 {
+    position: relative;
+    left: 2%;
+  }
   .row a {
     color: white;
     padding-right: 20px;

@@ -28,11 +28,11 @@
     <div class='edit'>
 
     <h1 class='heading'>Edit User</h1><br>
-    <form action='/users/<%=user.id%>?_method=PUT' method='POST'>
-      Profile Pic: <input type='text' name='profilePic'/><br>
-      Username: <input type='text' name='username' value='<%=user.username%>'/><br>
-      Location: <input type='text' name='location' value='<%=user.location%>'/><br><br>
-      <input type='submit' value='Edit User'/>
+    <form class='form' action='/users/<%=user.id%>?_method=PUT' method='POST'>
+      Profile Pic: <input type='text' name='profilePic'/><br><br>
+      Username: <input type='text' name='username' value='<%=user.username%>'/><br><br>
+      Location: <input class='form1' type='text' name='location' value='<%=user.location%>'/><br><br>
+      <input class='submit' type='submit' value='Edit User'/>
     </form>
   </div>
 
@@ -72,6 +72,16 @@
     background-color: #226f54;
     height: 65px;
     margin-bottom: 50px;
+  }
+
+  .form1 {
+    position: relative;
+    left: 1.2%;
+  }
+
+  .submit {
+    background-color: #226f54;
+    color: white;
   }
 
   .edit {

@@ -61,7 +61,7 @@
           <script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBBwSRcjgTDYRbqUY0uQe-160PPJ1g0Iy4&callback=initMap'> </script>
 
           <form action='/photos/<%=photo.id%>?_method=DELETE' method='POST'>
-              <input type='submit' value='Delete Post'/><br>
+              <input class='delete' type='submit' value='Delete Post'/><br>
           </form>
 
         </div>
@@ -149,6 +149,11 @@
     background-color: #226f54;
     height: 65px;
     margin-bottom: 50px;
+  }
+
+  .delete {
+    background-color: #226f54;
+    color: white;
   }
 
   form {

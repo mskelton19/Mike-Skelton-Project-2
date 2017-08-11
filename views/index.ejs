@@ -29,9 +29,9 @@
     <div class='register'>
       <h3>Create Account</h3><br>
       <form class='create' action='/register' method='POST'>
-        Username <input type='text' name='username'/><br><br>
-        Password <input type='password' name='password'/><br><br>
-        Location <input type='text' name='location'/><br><br>
+        Username <input class='form1' type='text' name='username'/><br><br>
+        Password <input class='form2' type='password' name='password'/><br><br>
+        Location <input class='form3' type='text' name='location'/><br><br>
         Profile Pic (URL) <input type="text" name='profilePic'/><br><br>
         <input class='submit' type='submit' name='' value='Create User'/>
       </form>
@@ -57,8 +57,19 @@
       margin-bottom: 50px;
     }
 
-    .create {
-      text-align: center;
+    .form1 {
+      position: relative;
+      left: 7%
+    }
+
+    .form2 {
+      position: relative;
+      left: 8%
+    }
+
+    .form3 {
+      position: relative;
+      left: 8.5%
     }
 
     .register {
@@ -75,6 +86,7 @@
       font-size: 16px;
       margin-bottom: 20px;
     }
+
 
     input {
       border: 1px solid #226846;

@@ -87,6 +87,8 @@ router.delete('/photos/:id', isLoggedIn, (req, res) => {
   });
 });
 
+
+// Google maps
 function isLoggedIn(req, res, next){
   if(req.isAuthenticated()){
     return next();
@@ -105,5 +107,6 @@ function initMap() {
     map: map
   });
 }
+
 
 module.exports = router;
